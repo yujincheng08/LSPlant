@@ -1,0 +1,17 @@
+var searchData=
+[
+  ['rank_5fv_4677',['rank_v',['http://en.cppreference.com/w/cpp/types/rank.html',1,'std::rank_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::rank_v()']]],
+  ['ratio_5fequal_5fv_4678',['ratio_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_equal.html',1,'std::ratio_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_equal_v()']]],
+  ['ratio_5fgreater_5fequal_5fv_4679',['ratio_greater_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_greater_equal.html',1,'std::ratio_greater_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_greater_equal_v()']]],
+  ['ratio_5fgreater_5fv_4680',['ratio_greater_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_greater.html',1,'std::ratio_greater_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_greater_v()']]],
+  ['ratio_5fless_5fequal_5fv_4681',['ratio_less_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_less_equal.html',1,'std::ratio_less_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_less_equal_v()']]],
+  ['ratio_5fless_5fv_4682',['ratio_less_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_less.html',1,'std::ratio_less_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_less_v()']]],
+  ['ratio_5fnot_5fequal_5fv_4683',['ratio_not_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_not_equal.html',1,'std::ratio_not_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_not_equal_v()']]],
+  ['ref_4684',['ref',['../structJNINativeInterface__.html#a9062c77eaa755337666f41ebd871bb2e',1,'JNINativeInterface_::ref()'],['../structJNINativeInterface__.html#a6f4f6b90c3fe99d88f7d64a094fb0464',1,'JNINativeInterface_::ref()']]],
+  ['rem_4685',['rem',['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::div_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::imaxdiv_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::ldiv_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::lldiv_t::rem()']]],
+  ['reserved0_4686',['reserved0',['../structJNINativeInterface__.html#a306f136e638ac8606eab78b1fc0ccb21',1,'JNINativeInterface_::reserved0()'],['../structJNIInvokeInterface__.html#a9b752e814bb5bbb9ecbde93bd72b32c8',1,'JNIInvokeInterface_::reserved0()']]],
+  ['reserved1_4687',['reserved1',['../structJNINativeInterface__.html#adae90fbc1ebdccc51f119e94a2d7b1d0',1,'JNINativeInterface_::reserved1()'],['../structJNIInvokeInterface__.html#ac4bca6d0b1eda505b632638ef8b70356',1,'JNIInvokeInterface_::reserved1()']]],
+  ['reserved2_4688',['reserved2',['../structJNINativeInterface__.html#aabe859800af96f30f749fd42ce05f95b',1,'JNINativeInterface_::reserved2()'],['../structJNIInvokeInterface__.html#acc6b2800b369f152ba301d8f87a2a16f',1,'JNIInvokeInterface_::reserved2()']]],
+  ['reserved3_4689',['reserved3',['../structJNINativeInterface__.html#a2d528f2e575cedfd8d47640d0a93ae4f',1,'JNINativeInterface_']]],
+  ['result_4690',['result',['../structJNINativeInterface__.html#a653586f1a79e92593139da06ba4c765e',1,'JNINativeInterface_']]]
+];
