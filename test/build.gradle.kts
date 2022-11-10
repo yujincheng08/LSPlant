@@ -100,12 +100,12 @@ dependencies {
 afterEvaluate {
     task("testOnAllMVDs") {
         dependsOn("assembleAndroidTest")
+        var lastTask: Task = null
         tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
-            this@task.dependsOn(task<GradleBuild>("${this@withType.name}Executor") {
-                doFirst { println("::group::$this@withType") }
-                tasks = listOf(this@withType.name)
-                doLast { println("::endgroup::") }
-            })
+            this@task.dependsOn(this)
+            lastTask?.let { mustRunAfter(it) }
+            doFirst { println("::group::$this") }
+            doLast { println("::endgroup::") }
         }
     }
 }
