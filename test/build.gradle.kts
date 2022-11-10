@@ -100,15 +100,15 @@ dependencies {
 afterEvaluate {
     task("testOnAllMVDs") {
         dependsOn("assembleAndroidTest")
-        doLast {
-            tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
-                println("::group::$this")
-                exec {
-                    executable = "${rootProject.buildFile.parent}/gradlew"
-                    args = listOf(":${project.name}:$name")
-                }
-                println("::endgroup::")
+        val testTasks = ArrayList<GradleBuild>()
+        tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
+            val taskName = name
+            testTasks += task<GradleBuild>("${name}Executor") {
+                tasks = listOf(taskName)
             }
+        }
+        doLast {
+            testTasks.forEach { it.execute() }
         }
     }
 }
