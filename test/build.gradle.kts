@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
-import com.android.build.gradle.internal.tasks.ManagedDeviceInstrumentationTestTask
+import com.android.build.gradle.internal.tasks.ManagedDeviceSetupTask
 
 plugins {
     id("com.android.application")
@@ -99,10 +99,8 @@ dependencies {
 
 afterEvaluate {
     var lastTask: Task? = null
-    tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
+    tasks.withType(ManagedDeviceSetupTask::class.java) {
         lastTask?.let { mustRunAfter(it) }
         lastTask = this
-        doFirst { println("::group::$this") }
-        doLast { println("::endgroup::") }
     }
 }
