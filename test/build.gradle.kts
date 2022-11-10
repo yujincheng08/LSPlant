@@ -100,7 +100,7 @@ dependencies {
 afterEvaluate {
     task("testOnAllMVDs") {
         dependsOn("assembleAndroidTest")
-        var lastTask: Task = null
+        var lastTask: Task? = null
         tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
             this@task.dependsOn(this)
             lastTask?.let { mustRunAfter(it) }
