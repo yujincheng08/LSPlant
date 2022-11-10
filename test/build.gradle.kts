@@ -100,17 +100,12 @@ dependencies {
 afterEvaluate {
     task("testOnAllMVDs") {
         dependsOn("assembleAndroidTest")
-        val testTasks = ArrayList<GradleBuild>()
         tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
-            val taskName = name
-            testTasks += task<GradleBuild>("${name}Executor") {
-                doFirst { println("::group::$taskName") }
-                tasks = listOf(taskName)
+            this@task.dependsOn(task<GradleBuild>("${this@withType.name}Executor") {
+                doFirst { println("::group::$this@withType") }
+                tasks = listOf(this@withType.name)
                 doLast { println("::endgroup::") }
-                if (testTasks.isNotEmpty())
-                    mustRunAfter(testTasks.last())
-            }
+            })
         }
-        testTasks.forEach { dependsOn(it) }
     }
 }
