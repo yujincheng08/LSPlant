@@ -98,14 +98,11 @@ dependencies {
 }
 
 afterEvaluate {
-    task("testOnAllMVDs") {
-        dependsOn("assembleAndroidTest")
-        var lastTask: Task? = null
-        tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
-            this@task.dependsOn(this)
-            lastTask?.let { mustRunAfter(it) }
-            doFirst { println("::group::$this") }
-            doLast { println("::endgroup::") }
-        }
+    var lastTask: Task? = null
+    tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
+        lastTask?.let { mustRunAfter(it) }
+        lastTask = this
+        doFirst { println("::group::$this") }
+        doLast { println("::endgroup::") }
     }
 }
