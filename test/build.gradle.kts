@@ -104,11 +104,13 @@ afterEvaluate {
         tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
             val taskName = name
             testTasks += task<GradleBuild>("${name}Executor") {
+                doFirst { println("::group::$taskName") }
                 tasks = listOf(taskName)
+                doLast { println("::endgroup::") }
+                if (testTasks.isNotEmpty())
+                    mustRunAfter(testTasks.last())
             }
         }
-        doLast {
-            testTasks.forEach { it.execute() }
-        }
+        testTasks.forEach { dependsOn(it) }
     }
 }
