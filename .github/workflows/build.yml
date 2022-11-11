@@ -97,7 +97,7 @@ jobs:
           echo 'android.testoptions.manageddevices.emulator.gpu=swiftshader_indirect' >> gradle.properties
           echo 'android.native.buildOutput=verbose' >> gradle.properties
           echo 'android.sdk.channel=3' >> gradle.properties
-          ./gradlew :test:testOnAllMVDs
+          ./gradlew :test:allDevicesDebugAndroidTest
       - name: Prepare upload
         if: always()
         run: rm -vf test/build/outputs/androidTest-results/managedDevice/*/testlog/adb.additional_test_output*

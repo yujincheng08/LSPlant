@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.ManagedVirtualDevice
+import com.android.build.gradle.internal.tasks.ManagedDeviceSetupTask
 import com.android.build.gradle.internal.tasks.ManagedDeviceInstrumentationTestTask
 
 plugins {
@@ -98,17 +99,14 @@ dependencies {
 }
 
 afterEvaluate {
-    task("testOnAllMVDs") {
-        dependsOn("assembleAndroidTest")
-        doLast {
-            tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
-                println("::group::$this")
-                exec {
-                    executable = "${rootProject.buildFile.parent}/gradlew"
-                    args = listOf(":${project.name}:$name")
-                }
-                println("::endgroup::")
-            }
+    var lastTask: Task? = null
+    tasks.withType(ManagedDeviceInstrumentationTestTask::class.java) {
+        lastTask?.let { l ->
+            taskDependencies.getDependencies(this).firstOrNull {
+                it is ManagedDeviceSetupTask
+            }?.mustRunAfter(l)
         }
+        lastTask = this
     }
 }
+
